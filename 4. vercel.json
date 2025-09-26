@@ -1,8 +1,0 @@
-{
-    "version": 2,
-    "builds": [
-      { "src": "1. Profil_IG.html", "use": "@vercel/static" },
-      { "src": "**/*", "use": "@vercel/static" }
-    ]
-  }
-  
