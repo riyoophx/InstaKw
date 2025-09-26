@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profil - Instagram KW</title>
+  <link rel="stylesheet" href="2. Profil_IG.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1 class="logo">InstaKw</h1>
+      <nav class="top-actions">
+        <button id="addPostBtn" aria-label="Tambah">+</button>
+        <button id="menuBtn" aria-label="Menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container profile">
+    <!-- profil header -->
+    <section class="profile-header">
+      <img class="avatar" src="5. IMG/PP.jpeg" alt="Avatar pengguna" />
+      <div class="profile-meta">
+        <div class="row">
+          <h2 class="username">riolagimalas</h2>
+          <button id="followBtn" class="btn primary">Follow</button>
+          <button id="moreBtn" class="btn ghost" aria-label="Lainnya">⋯</button>
+        </div>
+
+        <ul class="stats">
+          <li><strong id="postsCount">6</strong><span>posts</span></li>
+          <li><strong id="followersCount">500</strong><span>followers</span></li>
+          <li><strong id="followingCount">345</strong><span>following</span></li>
+        </ul>
+
+        <div class="bio">
+          <p><strong>Rio</strong> • Network Engineer • suka kopi ☕️</p>
+          <p>love your life </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- highlight / stories -->
+    <section class="highlights">
+      <div class="highlight">Travel</div>
+      <div class="highlight">Food</div>
+      <div class="highlight">Work</div>
+      <div class="highlight">Pets</div>
+    </section>
+
+    <!-- grid foto -->
+    <section class="grid" id="photoGrid" aria-label="Grid foto pengguna">
+      <!-- contoh item: src diisi secara statis. JS bisa generate juga -->
+      <figure class="grid-item"><img src="5. IMG/FEED_1.jpeg" alt="Foto 1" /></figure>
+      <figure class="grid-item"><img src="5. IMG/FEED_2.jpeg" alt="Foto 2" /></figure>
+      <figure class="grid-item"><img src="5. IMG/FEED_3.jpeg" alt="Foto 3" /></figure>
+      <figure class="grid-item"><img src="5. IMG/FEED_4.jpeg" alt="Foto 4" /></figure>
+      <figure class="grid-item"><img src="5. IMG/FEED_5.jpeg" alt="Foto 5" /></figure>
+      <figure class="grid-item"><img src="5. IMG/FEED_6.jpeg" alt="Foto 6" /></figure>
+  </main>
+
+  <!-- modal gambar -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Pratinjau foto">
+    <button class="close" id="lbClose" aria-label="Tutup">✕</button>
+    <img id="lbImage" src="" alt="Preview" />
+  </div>
+
+  <script src="3. Profil_IG.js"></script>
+</body>
+</html>
