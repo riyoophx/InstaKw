@@ -59,3 +59,72 @@ html,body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe U
   .username { font-size:18px; }
   .stats { gap:12px; }
 }
+
+/* lightbox baru dengan komentar */
+.lightbox-content {
+  background: #fff;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90%;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.lightbox-left {
+  flex: 2;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-left img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.lightbox-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.post-header {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.comments {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 8px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+#commentForm {
+  display: flex;
+  gap: 6px;
+}
+#commentForm input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#commentForm button {
+  background: #0095f6;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+

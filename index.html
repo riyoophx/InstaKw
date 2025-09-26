@@ -51,19 +51,37 @@
 
     <!-- grid foto -->
     <section class="grid" id="photoGrid" aria-label="Grid foto pengguna">
-      <!-- contoh item: src diisi secara statis. JS bisa generate juga -->
-      <figure class="grid-item"><img src="img/FEED_1.jpeg" alt="Foto 1" /></figure>
-      <figure class="grid-item"><img src="img/FEED_2.jpeg" alt="Foto 2" /></figure>
-      <figure class="grid-item"><img src="img/FEED_3.jpeg" alt="Foto 3" /></figure>
-      <figure class="grid-item"><img src="img/FEED_4.jpeg" alt="Foto 4" /></figure>
-      <figure class="grid-item"><img src="img/FEED_5.jpeg" alt="Foto 5" /></figure>
-      <figure class="grid-item"><img src="img/FEED_6.jpeg" alt="Foto 6" /></figure>
+      <figure class="grid-item"><img src="img/FEED_1.jpeg" alt="Foto 1" data-id="1"/></figure>
+      <figure class="grid-item"><img src="img/FEED_2.jpeg" alt="Foto 2" data-id="2"/></figure>
+      <figure class="grid-item"><img src="img/FEED_3.jpeg" alt="Foto 3" data-id="3"/></figure>
+      <figure class="grid-item"><img src="img/FEED_4.jpeg" alt="Foto 4" data-id="4"/></figure>
+      <figure class="grid-item"><img src="img/FEED_5.jpeg" alt="Foto 5" data-id="5"/></figure>
+      <figure class="grid-item"><img src="img/FEED_6.jpeg" alt="Foto 6" data-id="6"/></figure>
+    </section>
   </main>
 
   <!-- modal gambar -->
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Pratinjau foto">
-    <button class="close" id="lbClose" aria-label="Tutup">✕</button>
-    <img id="lbImage" src="" alt="Preview" />
+    <div class="lightbox-content">
+      <button class="close" id="lbClose" aria-label="Tutup">✕</button>
+      <div class="lightbox-left">
+        <img id="lbImage" src="" alt="Preview" />
+      </div>
+      <div class="lightbox-right">
+        <div class="post-header">
+          <strong class="username">riolagimalas</strong>
+        </div>
+        <div class="comments" id="lbComments"></div>
+        <div class="actions">
+          <button id="likeBtn">❤️</button>
+          <span id="likeCount">0 likes</span>
+        </div>
+        <form id="commentForm">
+          <input type="text" id="commentInput" placeholder="Tambahkan komentar..." />
+          <button type="submit">Post</button>
+        </form>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
