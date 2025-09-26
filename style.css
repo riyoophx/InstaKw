@@ -253,5 +253,18 @@ html,body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe U
   }
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  gap: 8px; /* jarak antara logo dan tulisan */
+}
+
+.logo-img {
+  width: 32px;   /* sesuaikan ukuran logo */
+  height: 32px;
+}
+
 
 
