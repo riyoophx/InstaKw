@@ -18,7 +18,6 @@
   </header>
 
   <main class="container profile">
-    <!-- profil header -->
     <section class="profile-header">
       <img class="avatar" src="img/PP.jpeg" alt="Avatar pengguna" />
       <div class="profile-meta">
@@ -27,13 +26,11 @@
           <button id="followBtn" class="btn primary">Follow</button>
           <button id="moreBtn" class="btn ghost" aria-label="Lainnya">⋯</button>
         </div>
-
         <ul class="stats">
           <li><strong id="postsCount">6</strong><span>posts</span></li>
           <li><strong id="followersCount">500</strong><span>followers</span></li>
           <li><strong id="followingCount">345</strong><span>following</span></li>
         </ul>
-
         <div class="bio">
           <p><strong>Rio</strong> • Network Engineer • suka kopi ☕️</p>
           <p>love your life </p>
@@ -41,7 +38,6 @@
       </div>
     </section>
 
-    <!-- highlight / stories -->
     <section class="highlights">
       <div class="highlight">Travel</div>
       <div class="highlight">Food</div>
@@ -49,7 +45,6 @@
       <div class="highlight">Pets</div>
     </section>
 
-    <!-- grid foto -->
     <section class="grid" id="photoGrid" aria-label="Grid foto pengguna">
       <figure class="grid-item"><img src="img/FEED_1.jpeg" alt="Foto 1" data-id="1"/></figure>
       <figure class="grid-item"><img src="img/FEED_2.jpeg" alt="Foto 2" data-id="2"/></figure>
@@ -64,6 +59,10 @@
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Pratinjau foto">
     <div class="lightbox-content">
       <button class="close" id="lbClose" aria-label="Tutup">✕</button>
+      <!-- tombol prev/next -->
+      <button class="nav-btn" id="prevBtn" aria-label="Previous">⟨</button>
+      <button class="nav-btn" id="nextBtn" aria-label="Next">⟩</button>
+
       <div class="lightbox-left">
         <img id="lbImage" src="" alt="Preview" />
       </div>
@@ -84,7 +83,6 @@
     </div>
   </div>
 
-  <!-- 👉 penting: panggil script.js sebagai module -->
-  <script type="module" src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
