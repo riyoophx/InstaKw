@@ -19,19 +19,34 @@ const allImages = Array.from(document.querySelectorAll("#photoGrid img"));
 
 let currentPhotoId = null;
 
-// ========== FOLLOW BUTTON ==========
-let following = false;
-followBtn.addEventListener("click", () => {
-  following = !following;
+// ===== USERNAME SETUP =====
+let username = localStorage.getItem("username");
+if (!username) {
+  username = prompt("Masukkan nama kamu:", "Anonymous") || "Anonymous";
+  localStorage.setItem("username", username);
+}
+
+// ===== FOLLOW BUTTON =====
+let following = JSON.parse(localStorage.getItem("following")) || false;
+
+function renderFollowButton() {
   if (following) {
     followBtn.textContent = "Following";
     followBtn.classList.remove("primary");
-    updateFollowers(1);
   } else {
     followBtn.textContent = "Follow";
     followBtn.classList.add("primary");
-    updateFollowers(-1);
   }
+}
+
+// pertama kali load, render sesuai data tersimpan
+renderFollowButton();
+
+followBtn.addEventListener("click", () => {
+  following = !following;
+  localStorage.setItem("following", JSON.stringify(following));
+  renderFollowButton();
+  updateFollowers(following ? 1 : -1);
 });
 
 function updateFollowers(delta) {
@@ -65,7 +80,12 @@ function renderData(photoId) {
   commentsContainer.innerHTML = "";
   data.comments.forEach((c) => {
     const p = document.createElement("p");
-    p.textContent = c;
+    if (typeof c === "string") {
+      // Komentar lama (versi string) → tetap tampil sebagai Anonymous
+      p.textContent = `Anonymous: ${c}`;
+    } else {
+      p.textContent = `${c.user}: ${c.text}`;
+    }
     commentsContainer.appendChild(p);
   });
 }
@@ -103,8 +123,11 @@ commentForm.addEventListener("submit", (e) => {
   if (!currentPhotoId) return;
   const text = commentInput.value.trim();
   if (!text) return;
+
   const data = getData(currentPhotoId);
-  data.comments.push(text);
+  const newComment = { user: username, text };
+  data.comments.push(newComment);
+
   saveData(currentPhotoId, data);
   commentInput.value = "";
   renderData(currentPhotoId);
